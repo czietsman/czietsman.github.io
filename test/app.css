@@ -6,6 +6,10 @@
 	padding: 1px 6px;
 }
 
+.table {
+	margin-bottom: .25rem
+}
+
 td.fieldName {
     width: 1px;
     white-space: nowrap;
