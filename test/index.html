@@ -12,25 +12,17 @@
 
 <div class="container">
     <div class="dropdown dropdown-dark">
-        <select class="dropdown-select">
-			<option value="yesterday">Yesterday</option>
-			<option value="today" selected>Today</option>
-			<option value="tomorrow">Tomorrow</option>
+        <select class="dropdown-select" data-bind="options: availableDays, value: selectedDay">
         </select>
     </div>
 
     <div class="dropdown dropdown-dark">
-        <select class="dropdown-select">
-			<option value="cricket" selected>Cricket</option>
-			<option value="rugby">Rugby</option>
-			<option value="tennis">Tennis</option>
+        <select class="dropdown-select" data-bind="options: availableSports, value: selectedSport">
         </select>
     </div>
 
     <div class="dropdown dropdown-dark">
-        <select class="dropdown-select">
-			<option value="cd">CD</option>
-			<option value="dvd" selected>DVD</option>
+        <select class="dropdown-select" data-bind="options: availableMedia, value: selectedMedia">
         </select>
     </div>
 </div>
@@ -74,5 +66,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" integrity="sha384-/EjRuG6YTb6zCFou+DBnYCi5u9E1RjUMJanyGOL7DUYLp6wSCUuHNhd58uoGj7jh" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js" integrity="sha256-KWJavOowudybFMUCd547Wvd/u8vUg/2g0uSWYU5Ae+w=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" integrity="sha256-nkP8cj5xaTdWK/BsZl+57ZCE/Y/i4UNtbNTpgH+6Taw=" crossorigin="anonymous"></script>
+<script>
+	var ViewModel = function() {
+        var self = this;
+        self.availableDays = ko.observableArray(['Yesterday','Today','Tomorrow']);
+        self.selectedDay = ko.observable('Today');
+
+        self.availableSports = ko.observableArray(['Cricket','Rugby','Tennis']);
+        self.selectedSport = ko.observable('Cricket');
+
+        self.availableMedia = ko.observableArray(['CD','DVD']);
+        self.selectedMedia = ko.observable('DVD');
+    };
+	
+	var viewModel = new ViewModel();
+    ko.applyBindings(viewModel);
+</script>
 </body>
 </html>
