@@ -13,6 +13,7 @@
 td.fieldName {
     width: 1px;
     white-space: nowrap;
+	vertical-align: inherit;
 }
 
 td.age {
