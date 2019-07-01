@@ -6,10 +6,6 @@
 	padding: 1px 6px;
 }
 
-.table {
-	margin-bottom: 0;
-}
-
 td.fieldName {
     width: 1px;
     white-space: nowrap;
@@ -23,6 +19,10 @@ td.age {
 td.bell {
     width: 1px;
     white-space: nowrap;
+}
+
+body {
+    line-height: 1;
 }
 
 input[type=number]::-webkit-inner-spin-button,
