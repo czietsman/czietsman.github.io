@@ -3,6 +3,11 @@ td.fieldName {
     white-space: nowrap;
 }
 
+td.age {
+    width: 1px;
+    white-space: nowrap;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
